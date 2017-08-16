@@ -18,6 +18,7 @@ public class CalendarHandling {
 	
 	private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    private static String today;
 	public static void main(String[] args) throws InterruptedException 
 	{
 		
@@ -52,8 +53,9 @@ public class CalendarHandling {
         //Integer to String Conversion
         String todayStr = Integer.toString(todayInt);
         System.out.println("Today Str: " + todayStr + "\n");
- 
         
+        
+             
         
      /*   ChromeDriver driver;
         driver = new ChromeDriver();
@@ -76,6 +78,8 @@ public class CalendarHandling {
         
         
 		}
+	
+	
 		
 
  

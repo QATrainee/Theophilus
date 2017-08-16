@@ -15,6 +15,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;;
 
 public class Datepicker {
+	
+	 private static String today="20/08/2017";
     public static void main(String[] args) throws Exception {
     	ChromeDriver driver;
         driver = new ChromeDriver();
@@ -35,24 +37,31 @@ try {
         new Actions(driver).moveToElement(driver.findElement(By.name("checkin"))).build().perform();
         driver.findElement(By.name("checkin")).click();
         
-        WebElement dates= driver.findElementByXPath("html/body/div[13]/div[1]/table/tbody");
         
-        List<WebElement> date= dates.findElements(By.name("td"));
         
-        String s=dates.getText();
+        WebElement datetable= driver.findElementByXPath("html/body/div[14]/div[1]/table/tbody");
         
-      System.out.println(s);
-
+        List<WebElement> date= datetable.findElements(By.name("td"));
+        
+       String s=datetable.getText();
+        
+        System.out.println(s);
+       /* for (WebElement cell: date) {
+            
+            //If you want to click 18th Date
+            if (cell.getText().equals("25")) {
+            	 cell.click();
+            	 break;
+            	
+            	/*
+            //Select Today's Date
+            if (cell.getText().equals(today)) {
+               
+               
+               
+            } */
         
        
-        for(WebElement ate: date) 
-        {
-        	
-        	String cal=ate.getAttribute("day");
-        	System.out.println(cal);
-        }
-        
-		
 
               
         Thread.sleep(1000);

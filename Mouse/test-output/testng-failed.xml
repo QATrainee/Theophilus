@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="hotel.DatePickerdemo">
+      <class name="calender.TurkishAirlinesDatePickerTest">
         <methods>
-          <include name="testDAtePicker"/>
+          <include name="setupTest"/>
+          <include name="quitDriver"/>
+          <include name="datePickerTest"/>
         </methods>
-      </class> <!-- hotel.DatePickerdemo -->
+      </class> <!-- calender.TurkishAirlinesDatePickerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
