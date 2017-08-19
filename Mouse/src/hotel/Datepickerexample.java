@@ -14,7 +14,7 @@ import static org.openqa.selenium.OutputType.*;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;;
 
-public class Datepicker {
+public class Datepickerexample {
 	
 	 private static String today="20/08/2017";
     public static void main(String[] args) throws Exception {
@@ -32,26 +32,50 @@ public class Datepicker {
         new Actions(driver).moveToElement(driver.findElement(By.xpath("//div[@class='searchground']/div[2]"))).build().perform();
         driver.findElement(By.xpath(".//*[@id='select2-drop']/ul/li/ul/li[1]/div")).click();
         
-       // mouse action calander
+       
 try {
         new Actions(driver).moveToElement(driver.findElement(By.name("checkin"))).build().perform();
         driver.findElement(By.name("checkin")).click();
         
         
-        
         WebElement datetable= driver.findElementByXPath("html/body/div[14]/div[1]/table/tbody");
         
-        List<WebElement> date= datetable.findElements(By.name("td"));
+   	   List<WebElement> rows = datetable.findElements(By.tagName("tr"));
+   	   
+   	   int n=rows.size();
+   	   
+       System.out.println(n+" row size.....");
+
+   	   List<WebElement> col = datetable.findElements(By.tagName("td"));
+   	   
+   	   int c=col.size();
+
+   	System.out.println(c+" col size.....");
+   	
+   	 for(WebElement s : col)
+      {
+    	  System.out.println(s.getText()+"------");
+      }
         
-       String s=datetable.getText();
+      
+      for(WebElement tdata:driver.findElements(By.tagName("td")))
+      {
+      System.out.println(tdata.getText());
+      } 
+       //  String s=datetable.getText();
         
-        System.out.println(s);
-       /* for (WebElement cell: date) {
+        // System.out.println(s);
+        
+       //for (WebElement cell: date) {
+    	   
+    	   //System.out.println(cell.getText());
+       //}
+       
             
             //If you want to click 18th Date
-            if (cell.getText().equals("25")) {
-            	 cell.click();
-            	 break;
+           // if (cell.getText().equals("25")) {
+            	// cell.click();
+            	// break;
             	
             	/*
             //Select Today's Date
